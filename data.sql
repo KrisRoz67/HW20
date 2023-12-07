@@ -17,8 +17,8 @@ CREATE TABLE customer_order
     id     SERIAL PRIMARY KEY,
     customer_id INT NOT NULL,
     product_id INT NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES customer (id),
-    FOREIGN KEY (product_id) REFERENCES product (id)
+    FOREIGN KEY (customer_id) REFERENCES customer (id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product (id) ON DELETE CASCADE
 );
 
 INSERT INTO customer (name)
